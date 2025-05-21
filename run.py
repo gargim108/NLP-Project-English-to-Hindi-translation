@@ -117,3 +117,9 @@ class HindEncorp(datasets.GeneratorBasedBuilder):
                     "alignment_quality": splits[2],
                     "translation": {"en": splits[3], "hi": splits[4]},
                 }
+
+          from datasets import load_dataset
+
+# Run only once, then comment this out
+raw_datasets = load_dataset("./run.py", "raw_datasets", split="train")
+raw_datasets.to_csv("dataset.csv")
